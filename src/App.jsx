@@ -1,23 +1,18 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text } from "react-native";
+import TextoCentral from "./components/TextoCentral";
 
 export default props =>{
     return(
-        <View style={styles.container}>
-            <Text style={styles.texto}>React Navigation</Text>
-        </View>
+        <SafeAreaView style={styles.container}>
+            <TextoCentral>App</TextoCentral>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container:{
         flex:1,        
-        backgroundColor: '#fff',
-        justifyContent:"center",
-        alignItems: "center",
-    },
-    texto:{
-        fontWeight:"bold",
-        fontSize: 24        
+        
     }
 })
