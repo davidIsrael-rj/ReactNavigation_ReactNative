@@ -1,15 +1,21 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text } from "react-native";
 
+import {enableScreens} from 'react-native-screens'
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaView, StyleSheet } from "react-native";
+import Stack from "./Stack";
+
+enableScreens();
 export default props => (
-    <SafeAreaView style={styles.container}>
-        <Text>Nav!</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+        <SafeAreaView style={styles.container}>
+            <Stack />
+        </SafeAreaView>
+    </NavigationContainer>
 )
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
-        backgroundColor:'#FFF'
     }
 })
