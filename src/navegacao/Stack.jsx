@@ -14,7 +14,7 @@ export default props => (
             name='TelaA'
             options={{ title: 'Informações Iniciais' }}>
                 {props => (
-                    <PassoStack {...props} avancar="TelaB" voltar>
+                    <PassoStack {...props} avancar="TelaB">
                         <TelaA/>
                     </PassoStack>
                 )}
