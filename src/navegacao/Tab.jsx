@@ -14,7 +14,7 @@ export default props => (
         tabBarIcon: () => null,
         tabBarIconStyle: {display: 'none'}
 
-    }}>
+    }} initialRouteName="TelaB">
         <Tab.Screen name="TelaA" component={TelaA} />
         <Tab.Screen name="TelaB" component={TelaB} />
         <Tab.Screen name="TelaC" component={TelaC} />
