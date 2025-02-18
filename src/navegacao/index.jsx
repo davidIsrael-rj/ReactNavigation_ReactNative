@@ -1,16 +1,18 @@
 import React from "react";
-
+import 'react-native-gesture-handler';
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaView, StyleSheet } from "react-native";
-import Stack from "./Stack";
-import Tab from "./Tab";
+import Drawer from "./Drawer";
+// import Stack from "./Stack";
+// import Tab from "./Tab";
 
 enableScreens();
 export default props => (
     <SafeAreaView style={styles.container}>
         <NavigationContainer>
-            <Tab />
+            <Drawer/>
+            {/* <Tab /> */}
             {/* <Stack /> */}
         </NavigationContainer>
     </SafeAreaView>
