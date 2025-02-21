@@ -9,6 +9,7 @@ const Tab = createBottomTabNavigator()
 export default props => (
     <Tab.Navigator screenOptions={{
         tabBarActiveTintColor: 'red',
+        headerShown:false,
         tabBarInactiveTintColor: 'blue',
         tabBarLabelStyle: { fontSize: 30 },
         tabBarIcon: () => null,
