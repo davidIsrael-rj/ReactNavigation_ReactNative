@@ -11,6 +11,9 @@ export default props => (
                     props.navigation.openDrawer()
                     setTimeout(()=> {
                         props.navigation.closeDrawer()
+                        setInterval(()=>{
+                            props.navigation.toggleDrawer() 
+                        }, 1000)
                     }, 3000)
                 }}
             />
