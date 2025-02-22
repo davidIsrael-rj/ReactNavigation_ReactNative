@@ -8,29 +8,43 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const Tab = createBottomTabNavigator()
 
 export default props => (
-    <Tab.Navigator
-        initialRouteName="TelaB"
-        screenOptions={({ route }) => ({
-            headerShown: false,
-            tabBarActiveTintColor: 'red',
-            tabBarInactiveTintColor: 'blue',
-            tabBarIcon: ({ color, size }) => {
-              let iconName;
-      
-              if (route.name === 'TelaA') {
-                iconName = 'power'; // exemplo de ícone para TelaA
-              } else if (route.name === 'TelaB') {
-                iconName = 'access-point'; // exemplo para TelaB
-              } else if (route.name === 'TelaC') {
-                iconName = 'remote'; // exemplo para TelaC
-              }
-      
-              return <Icon name={iconName} size={size} color={color} />;
-            },
-          })}>
+  <Tab.Navigator
+    screenOptions={({ route }) => ({
+      headerShown: false,
+      tabBarShowLabel: true,
+      tabBarActiveTintColor: 'green',
+      tabBarInactiveTintColor: 'blue',
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName
 
-        <Tab.Screen name="TelaA" component={TelaA} />
-        <Tab.Screen name="TelaB" component={TelaB} />
-        <Tab.Screen name="TelaC" component={TelaC} />
-    </Tab.Navigator>
+        switch (route.name) {
+          case 'TelaA':
+            iconName = focused
+              ? 'access-point-check'
+              : 'access-point'
+            break;
+          case 'TelaB':
+            iconName = focused
+              ? 'account-check'
+              : 'account'
+            break;
+          case 'TelaC':
+            iconName = focused
+              ? 'cog-play-outline'
+              : 'cog-outline'
+            break;
+        }
+        return <Icon name={iconName} size={size} color={color} />
+      },
+    })}
+
+  >
+
+    <Tab.Screen name="TelaA" component={TelaA} 
+      options={{title: 'Inicial'}} />
+    <Tab.Screen name="TelaB" component={TelaB} 
+      options={{title: 'Dados Pessoais'}}/>
+    <Tab.Screen name="TelaC" component={TelaC} 
+      options={{title:'Configuração'}}/>
+  </Tab.Navigator>
 )
